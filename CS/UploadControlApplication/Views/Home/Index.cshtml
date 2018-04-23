@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript">
+    function OnFileUploadComplete(s, e) {
+        if (e.callbackData !== "") {
+            GridView.PerformCallback();
+        }
+        else {
+            alert("The selected file was not uploaded.");
+        }
+    }
+</script>
+
+@using(Html.BeginForm("UploadControlUpload", "Home", FormMethod.Post)) {
+    @Html.DevExpress().UploadControl(settings => {
+        settings.Name = "UploadControl";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "UploadControlUpload" };
+        settings.ClientSideEvents.FileUploadComplete = "OnFileUploadComplete";
+
+        settings.ShowUploadButton = true;
+        settings.ShowProgressPanel = true;
+
+        settings.ValidationSettings.Assign(UploadControlApplication.Controllers.HomeControllerUploadControlSettings.UploadValidationSettings);
+    }).GetHtml()
+    @Html.Action("GridViewPartial")
+}
+
+
+
+
+
