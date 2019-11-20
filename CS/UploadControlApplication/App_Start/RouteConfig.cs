@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,9 +12,9 @@ namespace UploadControlApplication {
             routes.IgnoreRoute("{resource}.ashx/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "Default", // Route name
+                url: "{controller}/{action}/{id}", // URL with parameters
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
         }
     }

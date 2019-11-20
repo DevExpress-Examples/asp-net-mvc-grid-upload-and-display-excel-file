@@ -1,5 +1,6 @@
 ﻿@{
-    var grid = Html.DevExpress().GridView(settings => {
+    var grid = Html.DevExpress().GridView(settings =>
+    {
         settings.Name = "GridView";
 
 
@@ -19,7 +20,8 @@
         settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
 
     });
-    if(ViewData["EditError"] != null) {
+    if (ViewData["EditError"] != null)
+    {
         grid.SetEditErrorText((string)ViewData["EditError"]);
     }
 }

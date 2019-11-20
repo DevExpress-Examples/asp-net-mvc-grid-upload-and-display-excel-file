@@ -1,5 +1,5 @@
-﻿@Code
-    Layout = "~/Views/Shared/_Layout.vbhtml"
+@Code
+    ViewData("Title") = "Home Page"
 End Code
 
 @ModelType System.Collections.IEnumerable
@@ -21,16 +21,11 @@ End Code
                                           settings.Name = "UploadControl"
                                           settings.CallbackRouteValues = New With {Key .Controller = "Home", Key .Action = "UploadControlUpload"}
 
-										  settings.ClientSideEvents.FileUploadComplete = "OnFileUploadComplete"
+                                          settings.ClientSideEvents.FileUploadComplete = "OnFileUploadComplete"
                                           settings.ShowUploadButton = True
                                           settings.ShowProgressPanel = True
 
-                                          settings.ValidationSettings.Assign(UploadControlApplication.Controllers.HomeControllerUploadControlSettings.UploadValidationSettings)
+                                          settings.ValidationSettings.Assign(UploadControlApplication.HomeControllerUploadControlSettings.UploadValidationSettings)
                                       End Sub).GetHtml()
 End Using
 @Html.Partial("_GridViewPartial", Model)
-
-
-
-
-

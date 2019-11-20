@@ -2,17 +2,18 @@
                                      settings.Name = "GridView"
 
                                      settings.CallbackRouteValues = New With {Key .Controller = "Home", Key .Action = "GridViewPartial"}
-                                     settings.SettingsBehavior.ConfirmDelete = true
+                                     settings.SettingsBehavior.ConfirmDelete = True
 
 
-                                     settings.SettingsPager.Visible = true
-                                     settings.Settings.ShowGroupPanel = true
-                                     settings.Settings.ShowFilterRow = true
-                                     settings.SettingsBehavior.AllowSelectByRowClick = true
+                                     settings.SettingsPager.Visible = True
+                                     settings.Settings.ShowGroupPanel = True
+                                     settings.Settings.ShowFilterRow = True
+                                     settings.SettingsBehavior.AllowSelectByRowClick = True
 
                                      settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.Off
                                      settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right
                                      settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1
-                                     settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = false
+                                     settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = False
                                      settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0
                                  End Sub).Bind(Model).GetHtml()
+

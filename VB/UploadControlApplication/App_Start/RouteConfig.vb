@@ -1,21 +1,23 @@
-﻿Imports System
+Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Web
 Imports System.Web.Mvc
 Imports System.Web.Routing
 
-Namespace UploadControlApplication
-	Public Class RouteConfig
-		Public Shared Sub RegisterRoutes(ByVal routes As RouteCollection)
-			routes.IgnoreRoute("{resource}.axd/{*pathInfo}")
-			routes.IgnoreRoute("{resource}.ashx/{*pathInfo}")
+Public Class RouteConfig
+    Public Shared Sub RegisterRoutes(ByVal routes As RouteCollection)
+        routes.IgnoreRoute("{resource}.axd/{*pathInfo}")
+        routes.IgnoreRoute("{resource}.ashx/{*pathInfo}")
 
-			routes.MapRoute(name:= "Default", url:= "{controller}/{action}/{id}", defaults:= New With {
-				Key .controller = "Home",
-				Key .action = "Index",
-				Key .id = UrlParameter.Optional
-			})
-		End Sub
-	End Class
-End Namespace
+        ' MapRoute takes the following parameters, in order:
+        ' (1) Route name
+        ' (2) URL with parameters
+        ' (3) Parameter defaults
+        routes.MapRoute( _
+            name:="Default", _
+            url:="{controller}/{action}/{id}", _
+            defaults:=New With {.controller = "Home", .action = "Index", .id = UrlParameter.Optional} _
+        )
+    End Sub
+End Class

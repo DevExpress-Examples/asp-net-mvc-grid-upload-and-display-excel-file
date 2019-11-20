@@ -1,21 +1,9 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Data
-Imports System.Linq
-Imports System.Web
-Imports System.Web.Mvc
-Imports System.Web.UI
-Imports DevExpress.Spreadsheet
-Imports System.IO
-Imports DevExpress.Spreadsheet.Export
-Imports UploadControlApplication.Models
 Imports DevExpress.Web.Mvc
 
-Namespace UploadControlApplication.Controllers
-    Public Class HomeController
-        Inherits Controller
+Public Class HomeController
+        Inherits System.Web.Mvc.Controller
 
-        Public Function Index() As ActionResult
+        Function Index() As ActionResult
             Return View()
         End Function
 
@@ -30,8 +18,8 @@ Namespace UploadControlApplication.Controllers
             Dim model = If(String.IsNullOrEmpty(HomeControllerUploadControlSettings.resultFilePath), Nothing, helperClass.GetTableFromExcel())
             Return PartialView("_GridViewPartial", model)
         End Function
-
     End Class
+
     Public Class HomeControllerUploadControlSettings
         Public Const UploadDirectory As String = "~/UploadFolder/"
         Public Shared UploadValidationSettings As New DevExpress.Web.UploadControlValidationSettings() With {
@@ -50,6 +38,4 @@ Namespace UploadControlApplication.Controllers
 
             End If
         End Sub
-    End Class
-
-End Namespace
+End Class
