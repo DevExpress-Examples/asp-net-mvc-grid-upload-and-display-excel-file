@@ -1,6 +1,6 @@
 # Grid View for ASP.NET MVC - How to display data from an uploaded Excel file
 
-This example demonstrates how to use the [UploadControl](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.UploadControlExtension) to let a user upload a Microsoft Excel file to the server and view the uploaded file's data in the grid.
+This example demonstrates how to use the [UploadControl](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.UploadControlExtension) to allow users to upload a Microsoft Excel file to the server and view the uploaded file's data in the grid.
 
 > **Note:** The example application uses the `DevExpress.Docs` assembly. The [Document Server](https://www.devexpress.com/Products/NET/Document-Server/) subscription license is required to use the demonstrated technique.
 
@@ -26,7 +26,7 @@ This example demonstrates how to use the [UploadControl](https://docs.devexpress
     }
     ```
 
-3. Map the upload control's `CallbackRouteValues` property to the `UploadControlUpload` action. In this action, call the control's [GetUploadedFiles](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.UploadControlExtension.GetUploadedFiles(DevExpress.Web.Mvc.UploadControlSettings-System.EventHandler-DevExpress.Web.FileUploadCompleteEventArgs-)) method to pass the validation settings and call the `FileUploadComplete` method.
+3. Map the upload control's `CallbackRouteValues` property to the `UploadControlUpload` action. In this action, call the control's [GetUploadedFiles](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.UploadControlExtension.GetUploadedFiles(DevExpress.Web.Mvc.UploadControlSettings-System.EventHandler-DevExpress.Web.FileUploadCompleteEventArgs-)) method to pass validation settings and call the `FileUploadComplete` method.
 
     ```cs
     public ActionResult UploadControlUpload() {
